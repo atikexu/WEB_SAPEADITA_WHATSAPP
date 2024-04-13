@@ -1,0 +1,16 @@
+docker tag sapeaditawhatsapp1:latest atikexu/sapeaditawhatsapp1:latest
+
+npm install -g localtunnel
+
+lt --port 3001
+
+docker run --privileged -e PORT=3001 -p 3001:3001 sapeaditawhatsapp1:latest
+
+docker build --tag sapeaditawhatsapp .
+
+docker run --privileged -e PORT=3001 -p 3001:3001 sapeaditawhatsapp:latest
+
+
+npm install
+npm run build
+npm run dev
